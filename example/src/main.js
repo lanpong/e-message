@@ -1,9 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import hMessage from "./components/hmessage/index";
+import Message from "../../src/index";
 
 const app = createApp(App);
 
-app.use(hMessage);
+app.use(Message);
 
 app.mount("#app");

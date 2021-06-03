@@ -1,7 +1,7 @@
 import Message from "./src/message";
 
 Message.install = (app) => {
-  app.config.globalProperties.$hmessage = Message;
+  app.config.globalProperties.$message = Message;
 };
 
 export default Message;

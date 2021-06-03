@@ -17,19 +17,19 @@ import { h } from "vue";
 export default {
   methods: {
     success() {
-      this.$hmessage({ message: "success", type: "success", center: true });
+      this.$message({ message: "success", type: "success", center: true });
     },
     warning() {
-      this.$hmessage({ message: "warning", type: "warning" });
+      this.$message({ message: "warning", type: "warning" });
     },
     error() {
-      this.$hmessage({ message: "error", type: "error" });
+      this.$message({ message: "error", type: "error" });
     },
     info() {
-      this.$hmessage({ message: "info", type: "info" });
+      this.$message({ message: "info", type: "info" });
     },
     vnode() {
-      this.$hmessage({
+      this.$message({
         message: h("p", null, [
           h("span", null, "内容可以是 "),
           h("i", { style: "color: teal" }, "VNode"),

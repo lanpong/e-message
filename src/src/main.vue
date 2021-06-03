@@ -40,7 +40,7 @@ const typeMap = {
 };
 
 export default defineComponent({
-  name: "hmessage",
+  name: "message",
   props: {
     customClass: { type: String, default: "" },
     center: { type: Boolean, default: false },
