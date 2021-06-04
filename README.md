@@ -2,6 +2,7 @@
 
 Vue.js message plugin for vue 3 (from element-plus)
 
+[Demo](https://0x0ffff.github.io/e-message/)
 
 ## Import
 
