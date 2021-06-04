@@ -26,7 +26,7 @@ export default {
       this.$message({ message: "error", type: "error" });
     },
     info() {
-      this.$message({ message: "info", type: "info" });
+      this.$message.info({ message: "info" });
     },
     vnode() {
       this.$message({

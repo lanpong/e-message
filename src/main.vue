@@ -30,7 +30,7 @@ import {
   onMounted,
   ref,
 } from "vue";
-import { on, off } from "../utils/dom";
+import { on, off } from "./utils/dom";
 
 const typeMap = {
   success: "success",

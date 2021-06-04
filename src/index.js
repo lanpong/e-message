@@ -1,4 +1,4 @@
-import Message from "./src/message";
+import Message from "./message";
 
 Message.install = (app) => {
   app.config.globalProperties.$message = Message;
