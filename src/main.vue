@@ -13,11 +13,12 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
     >
+      <i v-if="type" :class="[typeClass, 'message__icon']"></i>
       <slot>
         <p v-if="!dangerouslyUseHTMLString" class="message__content">{{ message }}</p>
         <p v-else class="message__content" v-html="message"></p>
       </slot>
-      <div v-if="showClose" class="message__closeBtn" @click.stop="close">x</div>
+      <div v-if="showClose" class="message__closeBtn icon-close" @click.stop="close"></div>
     </div>
   </transition>
 </template>
@@ -58,7 +59,7 @@ export default defineComponent({
   setup(props) {
     const typeClass = computed(() => {
       const type = props.type;
-      return type && typeMap[type] ? `${typeMap[type]}` : "";
+      return type && typeMap[type] ? `icon-${typeMap[type]}` : "";
     });
 
     const customStyle = computed(() => {
@@ -120,6 +121,44 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: element-icons;
+  src: url("fonts/element-icons.woff") format("woff"),
+    url("fonts/element-icons.ttf") format("truetype");
+  font-weight: 400;
+  font-display: "auto";
+  font-style: normal;
+}
+[class*=" icon-"],
+[class^="icon-"] {
+  font-family: element-icons !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-close:before {
+  content: "";
+}
+.icon-error:before {
+  content: "";
+}
+.icon-success:before {
+  content: "";
+}
+.icon-info:before {
+  content: "";
+}
+.icon-warning:before {
+  content: "";
+}
+
 .message {
   min-width: 380px;
   box-sizing: border-box;
@@ -194,6 +233,18 @@ export default defineComponent({
   }
   &__icon {
     margin-right: 10px;
+    &.icon-info {
+      color: #909399;
+    }
+    &.icon-success {
+      color: #67c23a;
+    }
+    &.icon-warning {
+      color: #e6a23c;
+    }
+    &.icon-error {
+      color: #f56c6c;
+    }
   }
 }
 
